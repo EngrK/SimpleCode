@@ -1,0 +1,73 @@
+
+package cajote_jerry_bsit201;
+
+import java.util.*;
+
+public class Cajote_Jerry_BSIT201 {
+
+    class Employee{
+        String name;
+    
+    public void setName(String name){
+        this.name = name;
+    }
+    }
+    class PartTimeEmployee extends Employee{
+        double ratePerHour;
+        int hoursworked;
+        double wage;
+        
+        public void setWage(double ratePerHour, int hoursworked){
+            this.ratePerHour = ratePerHour;
+            this.hoursworked = hoursworked;
+        }
+        public double getWage(){
+            wage = ratePerHour * hoursworked;
+            return wage;
+        }
+                
+        
+    }
+    class FullTimeEmployee extends Employee{
+        double monthlySalary;
+        
+        public void setMonthlySalary(double monthlySalary){
+            this.monthlySalary = monthlySalary;
+        }
+        public double getMonthlySalary(){
+            return monthlySalary;
+        }
+    }
+    public static void main(String[] args) {
+        
+        Scanner n = new Scanner (System.in);
+        System.out.println("Enter your Name: ");
+        String name = n.nextLine();
+        System.out.println("Press F for Fulltime or P for PartTime. ");
+        char ch = n.next().charAt(0);
+        
+        if (ch == 'P'){
+            System.out.println("Enter rate per hour and no. of hours worked separated by space: ");
+            System.out.println("Sample: 107.50 13");
+            double rph = n.nextDouble();
+            int hw = n.nextInt();
+             double su = rph * hw;
+            System.out.println("Name: " + name);
+            System.out.println("Wage: " + su);
+            
+        }else if (ch == 'F'){
+            System.out.println("Enter your monthly Salary: ");
+            double month = n.nextDouble();
+            
+            System.out.println("Name: " + name);
+            System.out.println("Your monthly Salary: "+ month);
+                    
+                    }
+        else{
+            System.out.println("invalid");
+            
+            
+        }
+    }
+    
+}
