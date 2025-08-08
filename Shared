@@ -1,0 +1,14 @@
+SELECT 
+    Id,
+    Name,
+    Age,
+    Gender,
+    Level,
+    CASE 
+        WHEN Age < 16 THEN 'Young'
+        WHEN Age >= 16 AND Age < 20 THEN 'Teen'
+        WHEN Age >= 20 AND Age < 25 THEN 'Young Adult'
+        ELSE 'Adult'
+    END AS Age_Group
+FROM 
+    Students;
